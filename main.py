@@ -82,14 +82,3 @@ def delete_todo(id: str):
     todos.remove(target_todo)
     return target_todo
 
-if __name__ == "__main__":
-    import uvicorn
-
-    try:
-        PORT = int(os.getenv("PORT", 8000))
-        HOST = os.getenv("HOST", "127.0.0.1")
-    except ValueError as e:
-        print(f"Error parsing PORT: {e}")
-        sys.exit(1)
-
-    uvicorn.run(app, host=HOST, port=PORT)
